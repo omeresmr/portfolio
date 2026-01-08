@@ -1,7 +1,13 @@
+import Logo from './components/Header/Logo';
+import NavigationList from './components/Header/NavigationList';
+
 function App() {
   return (
     <>
-      <div className="text-red-500"> Test!</div>
+      <header>
+        <Logo />
+        <NavigationList />
+      </header>
     </>
   );
 }

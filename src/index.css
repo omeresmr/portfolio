@@ -1,1 +1,78 @@
 @import 'tailwindcss';
+
+@theme {
+  --color-background: #0a0a0f;
+  --color-foreground: #f8f8fc;
+
+  --color-primary: #f8f8fc;
+  --color-primary-foreground: #0a0a0f;
+
+  --color-secondary: #1f1f2e;
+  --color-secondary-foreground: #f8f8fc;
+
+  --color-card: #13131a;
+  --color-card-foreground: #f8f8fc;
+  --color-popover: #13131a;
+  --color-popover-foreground: #f8f8fc;
+
+  --color-accent: #06b6d4;
+  --color-accent-foreground: #f8f8fc;
+
+  --color-border: #2a2a3c;
+  --color-input: #2a2a3c;
+  --color-muted: #1f1f2e;
+  --color-muted-foreground: #9a9aae;
+
+  --color-ring: oklch(0.439 0 0);
+
+  --radius-lg: 0.625rem;
+  --radius-md: calc(0.625rem - 2px);
+  --radius-sm: calc(0.625rem - 4px);
+
+  --background-image-text-gradient: linear-gradient(
+    135deg,
+    #06b6d4 0%,
+    #14b8a6 100%
+  );
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+
+  header {
+    @apply flex justify-between items-center py-5 px-18 bg-background;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-text-gradient bg-clip-text text-transparent;
+  }
+}
+
+@layer components {
+  .logo {
+    @apply text-xl
+    duration-150
+    hover:scale-105
+    active:scale-95;
+  }
+
+  .nav-list {
+    @apply flex gap-4 text-sm items-center justify-center;
+  }
+
+  .nav-item {
+    @apply duration-150 rounded-lg py-2.25 px-4
+    hover:bg-secondary;
+  }
+  .cta-btn {
+    @apply bg-accent rounded-lg px-5 py-2.25
+    hover:cursor-pointer hover:brightness-90 duration-150;
+  }
+}
